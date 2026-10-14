@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Requirements Document (PRD) - Python DataLab</title>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --emerald: #059669;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .document-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--border);
+        }
+
+        .header-banner {
+            background: var(--primary);
+            color: #ffffff;
+            padding: 25px 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        .header-banner h1 {
+            margin: 0 0 6px 0;
+            font-size: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-banner h2 {
+            margin: 0 0 10px 0;
+            font-size: 15px;
+            color: #93c5fd;
+            font-weight: 500;
+        }
+
+        .header-banner p {
+            margin: 0;
+            font-size: 12px;
+            color: #cbd5e1;
+            font-style: italic;
+        }
+
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 13px;
+        }
+
+        .meta-table td {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+        }
+
+        .meta-table td:first-child {
+            font-weight: bold;
+            background-color: var(--bg-light);
+            width: 28%;
+            color: var(--primary);
+        }
+
+        h2.section-title {
+            color: var(--primary);
+            font-size: 16px;
+            border-left: 4px solid var(--accent);
+            padding: 6px 12px;
+            background: var(--bg-light);
+            border-radius: 0 4px 4px 0;
+            margin-top: 30px;
+            margin-bottom: 14px;
+        }
+
+        h3.subsection-title {
+            color: var(--accent);
+            font-size: 14px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        p, li {
+            font-size: 13.5px;
+            color: #334155;
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 6px;
+            margin-bottom: 14px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        li strong {
+            color: var(--primary);
+        }
+
+        .code-block {
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 12px;
+            line-height: 1.5;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 12.5px;
+        }
+
+        .data-table th {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .data-table td {
+            padding: 9px 12px;
+            border: 1px solid var(--border);
+        }
+
+        .data-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .badge-passed {
+            background-color: #d1fae5;
+            color: #065f46;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            display: inline-block;
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            padding: 16px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .document-container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+    <div class="no-print" style="text-align: right; margin-bottom: 15px;">
+        <button onclick="window.print()" style="background: #2563eb; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">🖨️ Cetak / Simpan sebagai PDF</button>
+    </div>
+
+    <div class="header-banner">
+        <h1>PRODUCT REQUIREMENTS DOCUMENT (PRD)</h1>
+        <h2>Python DataLab: Media Pembelajaran Interaktif Struktur Data Python</h2>
+        <p>SMAN 1 Kepanjen • Kurikulum Merdeka Informatika Kelas XI • Guru Pembimbing: Hermawan Hidayat, S.Kom.</p>
+    </div>
+
+    <table class="meta-table">
+        <tr>
+            <td>Nama Produk</td>
+            <td>Python DataLab (Android Application)</td>
+        </tr>
+        <tr>
+            <td>Versi Dokumen</td>
+            <td>1.1.0 (Production Release / Verified)</td>
+        </tr>
+        <tr>
+            <td>Platform Target</td>
+            <td>Android 8.0+ (Jetpack Compose & Kotlin)</td>
+        </tr>
+        <tr>
+            <td>Institusi & Pengampu</td>
+            <td>SMAN 1 Kepanjen — Bapak Hermawan Hidayat, S.Kom.</td>
+        </tr>
+        <tr>
+            <td>Arsitektur Teknis</td>
+            <td>MVVM, Room Database, On-Device Python Interpreter, Gemini 3.5 AI Tutor</td>
+        </tr>
+    </table>
+
+    <h2 class="section-title">1. EXECUTIVE SUMMARY & VISI PRODUK</h2>
+    <h3 class="subsection-title">1.1 Latar Belakang Masalah</h3>
+    <p>Struktur Data dalam pemrograman Python (<em>List, Tuple, Set, dan Dictionary</em>) merupakan kompetensi inti Kurikulum Merdeka Informatika Fase F (Kelas XI). Siswa sering mengalami hambatan kognitif dalam memahami:</p>
+    <ul>
+        <li><strong>Mutabilitas vs Immutabilitas:</strong> Kebingungan membedakan objek yang dapat dimodifikasi langsung di memori (List/Set/Dict) dengan objek konstan <em>read-only</em> (Tuple).</li>
+        <li><strong>Model Pengindeksan & Hash Table:</strong> Miskonsepsi saat mencoba mengindeks Set (<code>set[0]</code>) atau menggunakan tipe data yang <em>unhashable</em> sebagai Kunci Dictionary.</li>
+        <li><strong>Operasi Diagram Venn:</strong> Kesulitan mengimplementasikan aljabar himpunan (Union, Intersection, Difference, Symmetric Difference) ke dalam kode Python.</li>
+        <li><strong>Struktur Bersarang (Nested Data):</strong> Kerumitan navigasi indeks bertingkat pada <em>List of Dictionaries</em> dan matriks 2D.</li>
+        <li><strong>Keterbatasan Media Teks:</strong> Bahan ajar statis minim visualisasi RAM dan tidak menyediakan evaluasi galat instan.</li>
+    </ul>
+
+    <h3 class="subsection-title">1.2 Visi Produk</h3>
+    <p>Menjadi media laboratorium digital mandiri yang menggabungkan modul kurikulum terstruktur, visualisasi state memori interaktif, engine eksekusi Python lokal on-device, asisten bimbingan AI Tutor berbasis Gemini API, dan gamifikasi terintegrasi.</p>
+
+    <h2 class="section-title">2. SASARAN PENGGUNA & USER JOURNEY</h2>
+    <ul>
+        <li><strong>Siswa SMA Kelas XI (Primary Learner):</strong> Membutuhkan media belajar visual mandiri di HP, sarana coding langsung tanpa laptop, serta bantuan diagnosa error interpreter seketika.</li>
+        <li><strong>Guru Informatika (Educator / Mentor):</strong> Membutuhkan media diferensiasi pembelajaran digital yang selaras dengan Capaian Pembelajaran (CP) Informatika dan terstandarisasi CPython 3.11.</li>
+    </ul>
+
+    <h2 class="section-title">3. SPESIFIKASI KEBUTUHAN FUNGSIONAL</h2>
+    <h3 class="subsection-title">3.1 Modul Kurikulum 4 Struktur Data & Dasar Pemrograman (50+ Materi)</h3>
+    <ul>
+        <li><strong>List Module (14 Topik):</strong> Karakteristik dynamic array, zero-indexing, negative indexing, slicing <code>[start:stop:step]</code>, <code>append</code> vs <code>extend</code> vs <code>insert</code>, <code>pop</code> vs <code>remove</code> vs <code>del</code>, Timsort (<code>sort</code> vs <code>sorted</code>), list 2D (matriks), dan list comprehension.</li>
+        <li><strong>Tuple Module (9 Topik):</strong> Immutability & efisiensi RAM, single-element tuple trailing comma <code>(1,)</code>, tuple unpacking & swapping (<code>a, b = b, a</code>), defensive programming, dan tuple sebagai kunci dictionary hashable.</li>
+        <li><strong>Set Module (10 Topik):</strong> Keunikan nilai tanpa duplikat, jebakan <code>{}</code> (dict) vs <code>set()</code>, eliminasi duplikat cepat O(n), operasi Venn (<code>|</code>, <code>&</code>, <code>-</code>, <code>^</code>), metode aman <code>.discard()</code> vs <code>.remove()</code>, dan larangan <code>set[0]</code>.</li>
+        <li><strong>Dictionary Module (12 Topik):</strong> Pemetaan Key-Value, aturan kunci unik & hashable, akses aman <code>dict.get(k, default)</code>, penugasan <code>dict[k]=v</code> & <code>.update()</code>, looping <code>.items()</code>/<code>.keys()</code>/<code>.values()</code>, dan operator penggabungan <code>|</code> (Python 3.9+).</li>
+        <li><strong>Nested Structures & Perbandingan (5 Topik):</strong> <em>List of Dictionaries</em>, <em>Dictionary of Lists</em>, Matriks 2D, Matriks Perbandingan 4 Struktur Data, dan <em>Decision Flowchart</em>.</li>
+    </ul>
+
+    <h3 class="subsection-title">3.2 Visual State Engine (Visualisasi Memori Interaktif)</h3>
+    <ul>
+        <li><strong>List & Tuple RAM Visualizer:</strong> Diagram blok memori linier interaktif dengan pointer indeks positif dan negatif.</li>
+        <li><strong>Set Venn Diagram Visualizer:</strong> Diagram Venn dua himpunan dengan penyorotan area dinamis untuk operasi himpunan.</li>
+        <li><strong>Dictionary Hash Map Visualizer:</strong> Visualisasi pemetaan slot Compact Hash Table kunci-nilai.</li>
+        <li><strong>Nested Tree & 2D Grid Visualizer:</strong> Representasi visual struktur pohon bertingkat dan tabel matriks baris-kolom.</li>
+    </ul>
+
+    <h3 class="subsection-title">3.3 Engine Eksekusi Python & Code Playground</h3>
+    <ul>
+        <li><strong>On-Device Python Interpreter:</strong> Eksekusi sintaks Python lokal langsung di perangkat Android tanpa server backend.</li>
+        <li><strong>13 Tantangan Koding Terintegrasi:</strong> Studi kasus koding per modul dengan verifikasi output otomatis, petunjuk (<em>hint</em>), dan reward +15 XP.</li>
+        <li><strong>Full Playground:</strong> Editor kode bebas dengan kontrol Jalankan, Format, Reset, dan Simpan Snippet favorit.</li>
+    </ul>
+
+    <h3 class="subsection-title">3.4 Asisten Belajar Cerdas (AI Python Tutor powered by Gemini)</h3>
+    <ul>
+        <li><strong>Context-Aware Multi-Turn Consultation:</strong> Memahami topik modul aktif (<code>topicTitle</code>), kode playground siswa, riwayat percakapan, dan hasil eksekusi.</li>
+        <li><strong>Bedah Galat & Error Otomatis:</strong> Analisis terverifikasi untuk <em>SyntaxError, IndexError, KeyError, TypeError, ValueError,</em> dan <em>IndentationError</em>.</li>
+        <li><strong>Resiliensi Multi-Model & Streaming:</strong> Streaming teks instan dengan fallback otomatis antara <code>gemini-3.5-flash</code>, <code>gemini-3.1-pro-preview</code>, <code>gemini-3.1-flash-lite-preview</code>, dan <em>offline ground-truth engine</em>.</li>
+    </ul>
+
+    <h3 class="subsection-title">3.5 Gamifikasi, Kuis & Evaluasi</h3>
+    <ul>
+        <li><strong>Sistem XP & Leveling:</strong> Novice (0 XP) &rarr; Apprentice (100 XP) &rarr; Pythonista (300 XP) &rarr; Code Wizard (600+ XP).</li>
+        <li><strong>Evaluasi Kuis Formatif:</strong> Soal pilihan ganda per modul dengan evaluasi skor instan dan pembahasan lengkap.</li>
+        <li><strong>9 Achievement Badges:</strong> Lencana penghargaan saat menguasai setiap modul dan tantangan koding.</li>
+    </ul>
+
+    <h2 class="section-title">4. KEBUTUHAN NON-FUNGSIONAL</h2>
+    <ul>
+        <li><strong>UI/UX & Aksesibilitas (M3):</strong> Standar Material Design 3, minimum touch target &ge; 48dp, kontras ramah mata, dan proteksi insets keyboard.</li>
+        <li><strong>Performa:</strong> Cold-start &lt; 1.2 detik, eksekusi Python lokal &lt; 100 ms, dan rendering UI 60 FPS tanpa jank.</li>
+        <li><strong>Offline-First Persistence:</strong> Penyimpanan seluruh data progres belajar secara lokal di Android Room Database (SQLite).</li>
+        <li><strong>Keamanan Kredensial:</strong> Kunci API diamankan via Secrets Panel/BuildConfig tanpa eksposur di source code.</li>
+    </ul>
+
+    <h2 class="section-title">5. ARSITEKTUR TEKNIS</h2>
+    <div class="code-block">
+com.example/
+├── ai/          -> GeminiTutorService (API & Offline Engine), KnowledgeBase
+├── data/        -> CurriculumData, Room Database, DAO, Entity, Repository
+├── engine/      -> LocalPythonInterpreter, ExecutionResult, MemorySimulator
+├── model/       -> DataStructureType, TopicLesson, QuizQuestion, Badges
+├── navigation/  -> Type-safe Compose Routes
+└── ui/          -> M3 Components (Visualizers), Screens, Theme, ViewModel
+    </div>
+
+    <h2 class="section-title">6. STATUS VERIFIKASI & ACCEPTANCE CRITERIA</h2>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Kategori Pengujian</th>
+                <th>Kriteria Keberhasilan</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Kurikulum 4 Struktur Data</strong></td>
+                <td>50+ modul lengkap dapat diakses & ditandai selesai</td>
+                <td><span class="badge-passed">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Visual State Engine</strong></td>
+                <td>Visualizer RAM List, Tuple, Venn Set, Hash Map Dict aktif</td>
+                <td><span class="badge-passed">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Local Python Engine</strong></td>
+                <td>Eksekusi sintaks Python lokal on-device berhasil instan</td>
+                <td><span class="badge-passed">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>AI Tutor Contextuality</strong></td>
+                <td>Memahami pertanyaan List, Tuple, Set, Dict & Error diagnosis</td>
+                <td><span class="badge-passed">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Multi-turn & Streaming</strong></td>
+                <td>Streaming AI lancar tanpa blok kode terpotong</td>
+                <td><span class="badge-passed">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Gamifikasi & Lencana</strong></td>
+                <td>Pencatatan XP, Leveling, dan Badge Celebration aktif</td>
+                <td><span class="badge-passed">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Automated Test Suite</strong></td>
+                <td>27+ unit tests lulus 100% (gradle testDebugUnitTest)</td>
+                <td><span class="badge-passed">PASSED</span></td>
+            </tr>
+            <tr>
+                <td><strong>Android Applet Build</strong></td>
+                <td>Kompilasi sukses tanpa galat (compile_applet)</td>
+                <td><span class="badge-passed">PASSED</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer-note">
+        Dokumen ini merupakan spesifikasi resmi pengembangan aplikasi <strong>Python DataLab</strong> SMAN 1 Kepanjen.<br>
+        <strong>Pembimbing: Bapak Hermawan Hidayat, S.Kom. • Status: Approved & Release Ready</strong>
+    </div>
+</div>
+
+</body>
+</html>

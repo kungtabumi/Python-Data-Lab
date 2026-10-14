@@ -1,0 +1,6 @@
+{
+  "name": "Python DataLab",
+  "description": "Media pembelajaran interaktif Python Data Structures (List, Tuple, Set, Dictionary) untuk siswa SMA Kelas XI SMAN 1 Kepanjen bersama Hermawan Hidayat, S.Kom.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
